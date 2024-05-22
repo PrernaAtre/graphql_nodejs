@@ -15,10 +15,16 @@ module.exports = {
     },
     Mutation: {
         addNewProduct: (_, args) => {
-            return productModel.addNewProduct(args.id, args.description, args.price);
+            return productModel.addNewProduct( args.description, args.price);
         },
         addNewProductReview: (_, args) => {
             return productModel.addNewProductReview(args.id, args.rating, args.comment);
+        },
+        updateProduct : (_, args) => {
+            return productModel.updateProduct(args.id, args.description, args.price);
+        },
+        deleteProduct : (_, args) => {
+            return productModel.deleteProduct(args.id);
         }
     }
 };

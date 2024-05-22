@@ -1,6 +1,12 @@
+const dotenv = require("dotenv");
+
+dotenv.config();
+
 
 const path = require('path');
 const express = require('express');
+
+require("./connection");
 
 const { ApolloServer } = require('apollo-server-express')
 
@@ -26,7 +32,7 @@ async function startApolloServer()
     server.applyMiddleware({app, path : '/graphql'});
 
     app.listen(3000, ()=>{
-        console.log('eunning graph ql server......');
+        console.log('running graph ql server......');
     })
 }
 
